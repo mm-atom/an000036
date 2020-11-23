@@ -1,7 +1,7 @@
 {
-	"name": "@mmstudio/atom",
+	"name": "@mmstudio/an000036",
 	"version": "1.0.0",
-	"description": "",
+	"description": "使用手机号登陆",
 	"scripts": {
 		"test": "tsc && ava ./tests/*.js",
 		"watch": "tsc -w & ava --watch ./tests/*.js",
@@ -9,11 +9,11 @@
 		"lint": "eslint ./src/**/*.ts",
 		"compile": "tsc",
 		"build": "npm run clean && npm run lint && npm run compile",
-		"up": "git pull git@github.com:mm-core/base.git cjs"
+		"up": "git pull git@github.com:mm-tpl/atom-nodejs.git master"
 	},
 	"repository": {
 		"type": "https+git",
-		"url": "https://github.com/mm-tpl/atom-nodejs.git"
+		"url": "https://github.com/mm-atom/an000036.git"
 	},
 	"homepage": "https://mm-works.github.io",
 	"main": "dist/index.js",
@@ -30,7 +30,8 @@
 		"框架"
 	],
 	"author": {
-		"name": ""
+		"name": "taoqf",
+		"email": "tao_qiufeng@126.com"
 	},
 	"maintainers": [
 		{
