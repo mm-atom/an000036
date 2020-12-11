@@ -61,6 +61,8 @@
 		"typescript": "next"
 	},
 	"peerDependencies": {
-		"@mmstudio/config": "1.1.0"
+		"anylogger": "latest",
+		"@mmstudio/global": "latest",
+		"@mmstudio/config": "latest"
 	}
 }
