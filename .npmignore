@@ -2,6 +2,7 @@
 node_modules/
 tests/
 src/
+mm.json
 tsconfig.json
 .eslintignore 
 .eslintrc.json

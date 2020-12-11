@@ -1,9 +1,10 @@
-	// 使用手机号登陆
 	/**
-	 * ${0:变量注释}
+	 * ${0:数据库返回值}
 	 */
-	const r$CURRENT_SECONDS_UNIX = await(() => {
-		const p1 = $1;	// 参数注释
-		const p2 = $2;	// 参数注释
-		return an36(p1, p2);
+	const [r$CURRENT_SECONDS_UNIX] = await(() => {
+		const p11 = '$1';	// 示例: insert into tb001 (name) values (\$1),(\$2),(\$3);
+		const p12 = [];	// sql中点位符使用的参数值。示例:['mm001', 'mm002', 'mm003']
+		interface ITbable {
+		}
+		return an36<ITbable>([p11, p12]);
 	})();
