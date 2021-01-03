@@ -1,6 +1,6 @@
 {
 	"name": "@mmstudio/an000036",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "Postgre数据库操作",
 	"scripts": {
 		"test": "tsc && ava ./tests/*.js",
