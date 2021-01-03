@@ -6,9 +6,6 @@
 
 ```json
 {
-	"db": {
-		"type": "postgres",
-		"source": "postgres://mmstudio:Mmstudio123@127.0.0.1:5432/mmstudio"
-	}
+	"db": "postgres://mmstudio:Mmstudio123@127.0.0.1:5432/mmstudio"
 }
 ```
