@@ -22,13 +22,26 @@ export default function sql_query<T1 = Table, T2 = Table, T3 = Table, T4 = Table
 	return postgres_sql(sqls, db) as Promise<[T1[], T2[], T3[], T4[], T5[], T6[], T7[], T8[], T9[], T10[], T11[], T12[], T13[], T14[], T15[], T16[], T17[], T18[], T19[], T20[]]>;
 }
 
+// Position the bindings for the query. The escape sequence for question mark
+// is \? (e.g. knex.raw("\\?") since javascript requires '\' to be escaped too...)
+function position_bindings(sql: string) {
+	let questionCount = 0;
+	return sql.replace(/(\\*)(\?)/g, (_match, escapes: string) => {
+		if (escapes.length % 2) {
+			return '?';
+		}
+		questionCount++;
+		return `$${questionCount}`;
+	});
+}
+
 async function postgres_sql(sqls: [string, unknown[]][], source: string) {
 	logger.debug('postgres sql:', sqls);
 	const pool = postgres_get_pool(source);
 	const client = await pool.connect();
 	try {
 		const ret = await Promise.all(sqls.map(async ([sql, values]) => {
-			const r = await client.query(sql, values);
+			const r = await client.query(position_bindings(sql), values);
 			return r.rows as unknown[];
 		}));
 		logger.debug('postgres sqlquery result:', ret);

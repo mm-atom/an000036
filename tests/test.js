@@ -5,12 +5,8 @@ const { default: a } = require('../dist/index');
 test.before(async () => {
 	await a(['drop table if exists test_tb001;'],
 		['create table test_tb001 (name text);'],
-		[`insert into test_tb001 (name) values ($1),($2),($3);`, ['mmstudio001', 'mmstudio002', 'mmstudio003']]
+		[`insert into test_tb001 (name) values (?),(?),(?);`, ['mmstudio001', 'mmstudio002', 'mmstudio003']]
 	);
-	// await a(['drop table if exists test_tb001;'],
-	// 	['create table test_tb001 (name text);'],
-	// 	[`insert into test_tb001 (name) values (?),(?),(?);`, ['mmstudio001', 'mmstudio002', 'mmstudio003']]
-	// );
 });
 
 test.after(async () => {
